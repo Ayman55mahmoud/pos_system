@@ -1,3 +1,5 @@
+
+
 @extends('layout.master-mini')
 
 @section('content')
@@ -6,10 +8,13 @@
     <div class="col-lg-4 mx-auto">
       <h2 class="text-center mb-4">Register</h2>
       <div class="auto-form-wrapper">
-        <form action="#">
+        
+
+        <form action="{{ route('register') }}"  method="POST">
+          @csrf
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" class="form-control" name="name" placeholder="Username">
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="mdi mdi-check-circle-outline"></i>
@@ -19,7 +24,7 @@
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" name="password" placeholder="Password">
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="mdi mdi-check-circle-outline"></i>
@@ -29,7 +34,17 @@
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="password" class="form-control" placeholder="Confirm Password">
+              <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="mdi mdi-check-circle-outline"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="email" class="form-control" name="email" placeholder="email">
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="mdi mdi-check-circle-outline"></i>
@@ -44,7 +59,8 @@
             </div>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary submit-btn btn-block">Register</button>
+            <button type="submit" class="btn btn-primary submit-btn btn-block">Register</button>
+
           </div>
           <div class="text-block text-center my-3">
             <span class="text-small font-weight-semibold">Already have and account ?</span>
@@ -56,8 +72,6 @@
   </div>
 </div>
 @endsection
-
-
 
 
 <!-- @extends('layouts.app')
@@ -127,9 +141,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> -->
+                        </div> 
 
-<!-- 
+ 
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
@@ -151,4 +165,4 @@
         </div>
     </div>
 </div>
-@endsection --> 
+@endsection  -->

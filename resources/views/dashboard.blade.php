@@ -17,7 +17,7 @@
           <div class="float-right">
             <p class="mb-0 text-right">Total Revenue</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0">$65,650</h3>
+              <h3 class="font-weight-medium text-right mb-0">{{$salescount}}</h3>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="float-right">
             <p class="mb-0 text-right">Orders</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0">3455</h3>
+              <h3 class="font-weight-medium text-right mb-0">{{$countoforder}}</h3>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <div class="float-right">
             <p class="mb-0 text-right">Sales</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0">5693</h3>
+              <h3 class="font-weight-medium text-right mb-0">{{$activeOrders }}</h3>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
           <div class="float-right">
             <p class="mb-0 text-right">Employees</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0">246</h3>
+              <h3 class="font-weight-medium text-right mb-0">{{$employees}}</h3>
             </div>
           </div>
         </div>

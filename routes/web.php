@@ -1,17 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashpoardController;
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Auth::routes();
 
-Route::get('/charts', function () {
-    return view('pages.charts.chartjs');
-});
+Route::get('/',[DashpoardController::class,'index'] );
+
+Route::get('/charts',[DashpoardController::class,'topProductsToday'])->middleware('auth');
 
 
 Route::get('/tables', function () {
     return view('pages.tables.basic-table');
 });
 
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
