@@ -16,7 +16,7 @@ class DashpoardController extends Controller
 
         $salescount = order::whereDate('created_at', today())->sum('total_price');
 
-        $activeOrders = order::where('status', '!=', 'completed')->count();
+        $activeOrders = order::where('status', '=', 'Approved')->count();
 
         $busyTables = table::where('status', 'busy')->count();
 
@@ -29,8 +29,8 @@ class DashpoardController extends Controller
             ->take(5)
             ->with('product')
             ->get();
-            $labels = $topProducts->pluck('product.name'); // أسماء المنتجات
-            $values = $topProducts->pluck('total');       // عدد المبيعات
+            $labels = $topProductsToday->pluck('product.name'); // أسماء المنتجات
+            $values = $topProductsToday->pluck('total');       // عدد المبيعات
 
         $orderTypesCount = order::select('order_type', DB::raw('COUNT(*) as total'))
             ->whereDate('created_at', today())
@@ -72,10 +72,13 @@ class DashpoardController extends Controller
             ->take(5)
             ->with('product')
             ->get();
-            $labels = $topProducts->pluck('product.name'); // أسماء المنتجات
-            $values = $topProducts->pluck('total');       // عدد المبيعات
-            return view('chaets.chartjs',compact('labels','values'));
+            $labels = $topProductsToday->pluck('product.name'); // أسماء المنتجات
+            $values = $topProductsToday->pluck('total');       // عدد المبيعات
+            return view('pages.charts.chartjs',compact('labels','values'));
      }
+
+    
+
 
     //     public function todayOrdersCount()
     // {

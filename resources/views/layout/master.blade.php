@@ -23,6 +23,10 @@
   <!-- end common css -->
 
   @stack('style')
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+
 </head>
 <body data-base-url="{{ url('/') }}">
 
@@ -33,6 +37,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
           @yield('content')
+          @yield('script')
         </div>
         @include('layout.footer')
       </div>

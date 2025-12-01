@@ -35,6 +35,14 @@
       </a>
     </li>
 
+    {{-- Orders --}}
+    <li class="nav-item {{ request()->is('orders') ? 'active' : '' }}">
+      <a class="nav-link" href="{{ url('orders') }}">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Orders</span>
+      </a>
+    </li>
+
     {{-- Basic UI --}}
     <li class="nav-item {{ request()->is('basic-ui/*') ? 'active' : '' }}">
       <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="{{ request()->is('basic-ui/*') ? 'true' : 'false' }}" aria-controls="basic-ui">
